@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+    * {
+      box-sizing: border-box;
+    }
+    
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    
+    .split {
+      height: 100%;
+      width: 50%;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      overflow-x: hidden;
+      padding-top: 20px;
+    }
+
+    .left {
+      left: 0;
+      background-color: #111;
+    }
+
+    .right {
+      right: 0;
+      background-color: red;
+    }
+
+    .centered {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+
+    .centered img {
+      width: 150px;
+      border-radius: 50%;
+    }
+
+    .header {
+      text-align: center;
+      padding: 32px;
+    }
+    
+    .row {
+      display: -ms-flexbox; /* IE 10 */
+      display: flex;
+      -ms-flex-wrap: wrap; /* IE 10 */
+      flex-wrap: wrap;
+      padding: 0 4px;
+    }
+    
+    /* Create two equal columns that sits next to each other */
+    .column {
+      -ms-flex: 50%; /* IE 10 */
+      flex: 50%;
+      padding: 0 4px;
+    }
+    
+    .column img {
+      margin-top: 8px;
+      vertical-align: middle;
+    }
+    
+    </style>
+    </head>
+<body>
+
+<div class="split left">
+  <!-- Photo Grid -->
+<div class="row"> 
+    <div class="column">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6TX7qYZWHAut4GAK09Ljnu8eBix_HUA_JAw&usqp=CAU" style="width:100%">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbbIrfS7W_d4BD6BI5JCuQdIzXecS-3-CSXw&usqp=CAU" style="width:100%">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBD2MOTiYfEHL63A2KmDu5_YRc4NsvI2BAKQ&usqp=CAU" style="width:100%">
+    </div>
+    <div class="column">
+       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNbGojuQyXWcH2BAPspTrzXM5lCWg7t5RHBQ&usqp=CAU" style="width:100%">
+       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4CT5-tURiUzGS6SlUEUorHBpgYJ3B3FUPXA&usqp=CAU" style="width:100%">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5VoaV6M0h3qgYoptSc6YoP7hfC_9G6Gfxqg&usqp=CAU" style="width:100%">
+    </div>  
+  </div>
+
+<div class="split right">
+  <div class="centered">
+  <form action="/predict" method="POST">
+    <p> Enter Sex</p>
+<input type="text"  name="Sex"/>
+
+<p> Enter Length</p>
+<input type="text"  name="Length"/>
+
+<p> Enter Diameter</p>
+<input type="text"  name="Diameter"/>
+
+<p> Enter Height</p>
+<input type="text"  name="Height"/>
+
+<p> Enter Whole weight</p>
+<input type="text"  name="Whole weight"/>
+
+<p> Enter Shucked weight</p>
+<input type="text"  name="Shucked weight"/>
+
+<p> Enter Viscera weight</p>
+<input type="text"  name="Viscera weight"/>
+
+<p> Enter Shell weight</p>
+<input type="text"  name="Shell weight"/>
+
+<br>
+<br>
+<input type="submit"  value="click"/>
+
+
+</form>
+<b>{{x}}</b>
+  </div>
+</div>
+     
+</body>
+</html> 
+
