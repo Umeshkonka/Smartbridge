@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+      </head>
+<style>
+body {
+  font-family: Arial;
+}
+
+    .split {
+      height: 100%;
+      width: 50%;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      overflow-x: hidden;
+      padding-top: 20px;
+    }
+    img:hover {
+  animation: shake 0.5s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+
+    .left {
+      left: 0;
+      background-color: #111;
+    }
+
+    .right {
+      right: 0;
+      
+    }
+
+    
+    .centered img {
+      width: 30px;
+      border-radius: 50%;
+    }
+
+    .header {
+      text-align: center;
+      padding: 32px;
+    }
+    
+    .row {
+      display: -ms-flexbox; /* IE 10 */
+      display: flex;
+      -ms-flex-wrap: wrap; /* IE 10 */
+      flex-wrap: wrap;
+      padding: 0 4px;
+    }
+    
+    /* Create two equal columns that sits next to each other */
+    .column {
+      -ms-flex: 50%; /* IE 10 */
+      flex: 50%;
+      padding: 0 4px;
+    }
+    
+    .column img {
+      margin-top: 8px;
+      vertical-align: middle;
+    }
+    
+
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+div.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+</style>
+<body>
+    <div class="split left">
+        <img src="https://i.postimg.cc/tCK0gLcj/mix4.png" alt="abalone" width="750" height="728">
+    <div class="split right">
+    
+   <h1 style="text-align:center;">ABALONE AGE PREDICTION</h1> <br>
+    
+    
+    <div class="container">
+    <div class="centered">
+     <form action="/predict" method="POST">
+     
+        <h4 style="text-align:center;">Please enter the physical measurments of abalone</h4><br>
+
+        <div class="row">
+          <div class="col">
+              <div class="form-group">
+                  <label for="Sex">Enter Sex</label>
+                  <select name="Sex" id="Sex">
+                    <option value="select">Select</option>
+                    <option value="0">F</option>
+                    <option value="1">I</option>
+                    <option value="2">M</option>
+                  </select>
+              </div>
+          </div>
+
+          <div class="col">
+              <div class="form-group">
+                  <label for="Length">Enter Length</label>
+                  <input type="text" name="Length" id="Length" class="form-control">
+              </div>
+          </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+            <div class="form-group">
+                <label for="Diameter">Enter Diameter</label>
+                <input type="text" name="Diameter" id="Diameter" class="form-control">
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="form-group">
+                <label for="Height">Enter Height</label>
+                <input type="text" name="Height" id="Height" class="form-control">
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+          <div class="form-group">
+              <label for="Whole Weight">Enter Whole Weight</label>
+              <input type="text" name="Whole Weight" id="Whole Weight" class="form-control">
+          </div>
+      </div>
+
+      <div class="col">
+          <div class="form-group">
+              <label for="Shucked Weight">Enter Shucked Weight</label>
+              <input type="text" name="Shucked Weight" id="Shucked Weight" class="form-control">
+          </div>
+      </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+        <div class="form-group">
+            <label for="Viscera Weight">Enter Viscera Weight</label>
+            <input type="text" name="Viscera Weight" id="Viscera Weight" class="form-control">
+        </div>
+    </div>
+
+    <div class="col">
+        <div class="form-group">
+            <label for="Shell Weight">Enter Shell Weight</label>
+            <input type="text" name="Shell Weight" id="Shell Weight" class="form-control">
+        </div>
+    </div>
+</div>
+    
+
+    <input type="submit"  value="click"/>
+    
+    <h2>{{x}}</h2>
+    </form>
+    
+    </div>
+    
+    </body>
+    </html>
+    
